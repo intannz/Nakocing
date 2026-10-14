@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Menu | NakoCing</title>
+    
+    <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Phosphor Icons CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <main class="detail-main">
+        <!-- Breadcrumb Navigasi -->
+        <div class="breadcrumb">
+            <a href="index.html">Beranda</a> <span class="breadcrumb-sep">/</span>
+            <a href="menu.html">Menu</a> <span class="breadcrumb-sep">/</span>
+            <span style="color: var(--black); font-weight: 600;">Es Kopi Susu</span>
+        </div>
+
+        <!-- Kontainer Detail Produk -->
+        <div class="product-detail-wrapper">
+            
+            <!-- Kolom Kiri: Gambar Produk -->
+            <div class="product-gallery">
+                <!-- Foto diambil menggunakan ukuran resolusi tinggi -->
+                <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=800&q=80" alt="Es Kopi Susu">
+            </div>
+
+            <!-- Kolom Kanan: Informasi & Aksi -->
+            <div class="product-info-panel">
+                <h1>Es Kopi Susu</h1>
+                <span class="product-price-large">Rp 18.000</span>
+                
+                <p class="product-description">
+                    Perpaduan sempurna antara espresso dari biji kopi <i>house blend</i> pilihan NakoCing dengan susu segar dan gula aren asli. Menghasilkan rasa manis yang pas, <i>creamy</i>, namun karakter kopinya tetap terasa kuat. Cocok untuk menemani harimu.
+                </p>
+
+                <!-- Form Catatan Khusus -->
+                <div class="customization-section">
+                    <h4>Catatan Tambahan (Opsional)</h4>
+                    <textarea class="note-input" placeholder="Misal: Esnya sedikit aja ya, gulanya normal..."></textarea>
+                </div>
+
+                <!-- Aksi Masukkan ke Keranjang -->
+                <div class="product-actions">
+                    <div class="qty-control">
+                        <button class="qty-btn minus"><i class="ph ph-minus"></i></button>
+                        <span class="qty-val">1</span>
+                        <button class="qty-btn plus"><i class="ph ph-plus"></i></button>
+                    </div>
+                    <button class="btn btn-dark btn-add-large">
+                        <i class="ph ph-shopping-cart" style="margin-right: 8px;"></i> Tambah ke Keranjang
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+    
+    <script src="../js/dummy.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

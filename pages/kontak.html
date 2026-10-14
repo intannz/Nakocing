@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami | NakoCing</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Leaflet CSS untuk Peta -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <main class="contact-main">
+        <!-- Hero Section Kontak -->
+        <section class="menu-hero" style="min-height: 40vh; padding: 4rem 5%;">
+            <div class="menu-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="menu-hero-container">
+                <div class="menu-hero-content">
+                    <span class="section-label" style="color: var(--white); margin-bottom: 1rem;">KONTAK KAMI</span>
+                    <h1 style="font-size: 2.5rem;">Hubungi kami jika ada pertanyaan</h1>
+                    <p class="description">Kami siap membantu kamu. Jangan ragu untuk menghubungi kami melalui informasi berikut.</p>
+                </div>
+                <div class="menu-hero-cat">
+                    <img src="../assets/icon/cat-icon.svg" alt="NakoCing Cat" class="cat-neon-icon" style="width: 100px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Form & Info Kontak -->
+        <section class="contact-layout">
+            
+            <!-- Info Kontak (Kiri) -->
+            <div class="contact-info-section">
+                <h2>Informasi Kontak</h2>
+                <p style="color: var(--gray-text); margin-bottom: 2rem; font-size: 0.9rem;">Kami senang mendengar dari kamu.</p>
+                
+                <ul class="contact-details-list">
+                    <li>
+                        <div class="icon-circle"><i class="ph-fill ph-map-pin"></i></div>
+                        <div>
+                            <h4>Alamat</h4>
+                            <p>Jl. Melati No. 12, Jakarta<br><span style="color: var(--gray-text);">(dekat kampus & area Puspitek)</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-circle"><i class="ph-fill ph-phone"></i></div>
+                        <div>
+                            <h4>Telepon</h4>
+                            <p>+62 812 3456 7890<br><span style="color: var(--gray-text);">(09.00 - 21.00)</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-circle"><i class="ph-fill ph-envelope-simple"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@nakocing.id</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-circle"><i class="ph-fill ph-instagram-logo"></i></div>
+                        <div>
+                            <h4>Instagram</h4>
+                            <p>@nakocing.cafe</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Form Kirim Pesan (Kanan) -->
+            <div class="contact-form-card">
+                <h3>Kirim Pesan</h3>
+                <p style="color: var(--gray-text); font-size: 0.85rem; margin-bottom: 1.5rem;">Punya pertanyaan, saran, atau ingin bekerja sama? Isi form di bawah ini, ya!</p>
+                
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Pesan berhasil terkirim!');">
+                    <div class="input-group">
+                        <i class="ph ph-user"></i>
+                        <input type="text" placeholder="Nama" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="ph ph-envelope"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group align-top">
+                        <i class="ph ph-chat-text" style="margin-top: 1rem;"></i>
+                        <textarea placeholder="Pesan" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100"><i class="ph ph-paper-plane-tilt"></i> Kirim Pesan</button>
+                </form>
+            </div>
+            
+        </section>
+
+        <!-- Bagian Peta & Lokasi -->
+        <section class="map-layout">
+            <!-- Peta Leaflet -->
+            <div id="nakocing-map" class="map-container"></div>
+            
+            <!-- Info Lokasi -->
+            <div class="map-info-card sidebar-card">
+                <h3 style="margin-bottom: 1rem;">Lokasi Kami</h3>
+                <p style="color: var(--gray-text); font-size: 0.85rem; margin-bottom: 1.5rem;">Mudah dijangkau dari kampus dan area Puspitek.</p>
+                
+                <ul class="sidebar-info-list" style="border-top: none;">
+                    <li>
+                        <span class="label"><i class="ph ph-map-pin"></i> Alamat</span>
+                        <span class="val" style="text-align: right; font-size: 0.8rem;">Jl. Melati No. 12,<br>Jakarta</span>
+                    </li>
+                    <li>
+                        <span class="label"><i class="ph ph-car"></i> Parkir</span>
+                        <span class="val" style="font-size: 0.8rem;">Area parkir tersedia</span>
+                    </li>
+                    <li>
+                        <span class="label"><i class="ph ph-clock"></i> Jam Buka</span>
+                        <span class="val" style="text-align: right; font-size: 0.8rem;">Buka setiap hari<br>09.00 - 21.00</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Bagian Terima Kasih (Footer Ilustrasi) -->
+        <section class="thanks-layout">
+            <div class="thanks-content">
+                <img src="../assets/icon/cat-icon.svg" alt="Cat Sleep" class="thanks-cat">
+                <div class="thanks-text">
+                    <h3>Terima kasih</h3>
+                    <p>Sudah menjadi bagian dari Nakocing.<br>Sampai jumpa di kafe kami!</p>
+                </div>
+            </div>
+            <div class="hero-quote" style="color: var(--black); font-size: 1.2rem;">
+                Good food,<br>good mood,<br>no rush. <i class="ph-fill ph-paw-print"></i>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- Script Utama -->
+    <script src="../js/main.js"></script>
+    
+    <!-- Leaflet JS untuk Peta -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Inisialisasi Peta (Koordinat area Puspitek/Pamulang)
+            // Format: [Latitude, Longitude], Zoom Level
+            const map = L.map('nakocing-map').setView([-6.3475, 106.6900], 15);
+
+            // 2. Tambahkan TileLayer dari CartoDB (Tema Light/Abu-abu bersih sesuai desain)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+
+            // 3. Buat Ikon Kustom untuk Marker (Warna Hitam)
+            const customIcon = L.divIcon({
+                className: 'custom-map-marker',
+                html: '<i class="ph-fill ph-map-pin" style="color: var(--black); font-size: 32px; filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.2));"></i>',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32], // Titik tumpu ikon di tengah bawah
+                popupAnchor: [0, -32]
+            });
+
+            // 4. Tambahkan Marker Nakocing Cafe
+            L.marker([-6.3475, 106.6900], {icon: customIcon}).addTo(map)
+                .bindPopup('<b style="font-family: Inter;">Nakocing Cafe</b><br>Jl. Melati No. 12')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

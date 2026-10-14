@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesanan Saya | NakoCing</title>
+    
+    <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Phosphor Icons CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <main class="orders-main">
+        <!-- Hero Section Khusus Pesanan -->
+        <section class="menu-hero" style="min-height: 40vh; padding: 4rem 5%;">
+            <div class="menu-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="menu-hero-container">
+                <div class="menu-hero-content">
+                    <span class="section-label" style="color: var(--white); margin-bottom: 1rem;">PESANAN SAYA</span>
+                    <h1 style="font-size: 2.5rem;">Pantau pesananmu dengan mudah</h1>
+                    <p class="description">Lihat status pesanan, detail item, dan akses check-in untuk meja kamu di sini.</p>
+                </div>
+                <div class="menu-hero-cat">
+                    <img src="../assets/icon/cat-icon.svg" alt="NakoCing Cat" class="cat-neon-icon" style="width: 100px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Layout Pesanan -->
+        <section class="orders-layout">
+            
+            <!-- Kolom Kiri: Daftar Pesanan -->
+            <div class="orders-list-section">
+                <div class="orders-header">
+                    <h2>Daftar Pesanan</h2>
+                    <p style="color: var(--gray-text); font-size: 0.9rem; margin-top: 0.5rem;">Berikut adalah pesanan yang sedang dan pernah kamu buat.</p>
+                </div>
+                
+                <!-- Filter Status -->
+                <div class="orders-filters">
+                    <button class="filter-btn active"><i class="ph ph-list-dashes"></i> Semua</button>
+                    <button class="filter-btn"><i class="ph ph-clock"></i> Diproses</button>
+                    <button class="filter-btn"><i class="ph ph-chef-hat"></i> Siap Disajikan</button>
+                    <button class="filter-btn"><i class="ph ph-check-circle"></i> Selesai</button>
+                </div>
+
+                <!-- Kontainer Pesanan Dinamis -->
+                <div id="orders-container">
+                    <!-- Dummy data akan dirender di sini oleh main.js -->
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Sidebar Info -->
+            <aside class="orders-sidebar">
+                
+                <!-- Info Meja Aktif -->
+                <div class="sidebar-card center-content">
+                    <img src="../assets/icon/cat-icon.svg" alt="Cat Check-in" class="table-cat">
+                    <h3>Meja A03</h3>
+                    <p style="color: var(--gray-text); font-size: 0.85rem; margin-top: 0.5rem;">Terima kasih sudah memesan di NakoCing!</p>
+                    <div class="info-alert" style="text-align: left; margin-top: 1.5rem;">
+                        <i class="ph-fill ph-info"></i>
+                        <p>Untuk pesanan yang sedang diproses, silakan tunggu sebentar hingga status berubah menjadi siap check-in. Selamat menikmati layanan kami!</p>
+                    </div>
+                </div>
+
+                <!-- Rekap Info Pesanan -->
+                <div class="sidebar-card">
+                    <h4 style="margin-bottom: 1rem;">Info Pesanan</h4>
+                    <ul class="sidebar-info-list">
+                        <li>
+                            <span class="label"><i class="ph ph-receipt"></i> Total Pesanan</span>
+                            <span class="val">4 pesanan</span>
+                        </li>
+                        <li>
+                            <span class="label"><i class="ph ph-clock"></i> Pesanan Aktif</span>
+                            <span class="val">1 pesanan</span>
+                        </li>
+                        <li>
+                            <span class="label"><i class="ph ph-check-circle"></i> Selesai</span>
+                            <span class="val">3 pesanan</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bantuan -->
+                <div class="sidebar-card">
+                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                        <i class="ph ph-headset" style="font-size: 2rem; color: var(--black);"></i>
+                        <div>
+                            <h4>Butuh Bantuan?</h4>
+                            <p style="font-size: 0.85rem; color: var(--gray-text); margin: 0.5rem 0 1rem;">Jika ada kendala pada pesananmu, langsung hubungi staf kami di kafe.</p>
+                            <button class="btn btn-dark" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Hubungi Kami</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-quote" style="color: var(--black); font-size: 1rem; margin-top: 2rem;">
+                    Good food,<br>good mood,<br>no rush. <i class="ph-fill ph-paw-print"></i>
+                </div>
+
+            </aside>
+            
+        </section>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <script src="../js/dummy.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

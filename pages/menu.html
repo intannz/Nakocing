@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu NakoCing | Pesan Mudah</title>
+    
+    <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Phosphor Icons CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <main>
+        <!-- Menu Hero Banner -->
+        <section class="menu-hero">
+            <div class="menu-hero-bg"></div>
+            <div class="menu-hero-container">
+                <div class="menu-hero-content">
+                    <span class="section-label" style="color: var(--white); margin-bottom: 1rem;">MENU NAKOCING</span>
+                    <h1>Rasa Enak, Suasana Asik di Setiap Gigitan</h1>
+                    <p class="description">Nikmati berbagai pilihan kopi, minuman segar, dan makanan lezat yang cocok untuk menemani waktu santaimu di NakoCing.</p>
+                </div>
+                <div class="menu-hero-cat">
+                    <img src="../assets/icon/cat-icon.svg" alt="NakoCing Cat" class="cat-neon-icon">
+                    <div class="hero-quote" style="margin-top: 1rem; opacity: 0.8;">
+                        Good food,<br>good mood,<br>no rush.
+                        <i class="ph-fill ph-paw-print"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Layout (3 Kolom) -->
+        <section class="menu-layout">
+            
+            <!-- Kolom 1: Kategori Sidebar -->
+            <aside class="category-sidebar">
+                <h3 class="sidebar-title">Kategori</h3>
+                <ul class="category-list">
+                    <li><a href="#kopi" class="cat-item active"><i class="ph ph-coffee"></i> Kopi <i class="ph ph-caret-right cat-arrow"></i></a></li>
+                    <li><a href="#non-kopi" class="cat-item"><i class="ph ph-brandy"></i> Non Kopi <i class="ph ph-caret-right cat-arrow"></i></a></li>
+                    <li><a href="#makanan" class="cat-item"><i class="ph ph-fork-knife"></i> Makanan <i class="ph ph-caret-right cat-arrow"></i></a></li>
+                    <li><a href="#dessert" class="cat-item"><i class="ph ph-cake"></i> Dessert <i class="ph ph-caret-right cat-arrow"></i></a></li>
+                </ul>
+                
+                <div class="sidebar-illustration">
+                    <img src="../assets/icon/cat-icon.svg" alt="Cat Illustration">
+                    <p>Good food,<br>good mood,<br>no rush. <i class="ph-fill ph-paw-print"></i></p>
+                </div>
+            </aside>
+
+            <!-- Kolom 2: Daftar Menu -->
+            <div class="menu-main-content">
+                
+                <!-- Kategori: Kopi -->
+                <div id="kopi" class="menu-category-section">
+                    <div class="category-header">
+                        <h2 class="category-title">Kopi</h2>
+                        <span class="menu-count">4 Menu</span>
+                    </div>
+                    <div class="menu-grid-items">
+                        <!-- Dummy Data --->
+                    </div>
+                </div>
+
+                <!-- Kategori: Non Kopi -->
+                <div id="non-kopi" class="menu-category-section" style="margin-top: 3rem;">
+                    <div class="category-header">
+                        <h2 class="category-title">Non Kopi</h2>
+                        <span class="menu-count">2 Menu</span>
+                    </div>
+                    <div class="menu-grid-items">
+                        <!-- Konten di-render JS -->
+                    </div>
+                </div>
+
+                <!-- Kategori: Makanan  -->
+                <div id="makanan" class="menu-category-section" style="margin-top: 3rem;">
+                    <div class="category-header">
+                        <h2 class="category-title">Makanan</h2>
+                        <span class="menu-count">3 Menu</span>
+                    </div>
+                    <div class="menu-grid-items">
+                        <!-- Dummy Data -->
+                    </div>
+                </div>
+
+                <!-- Kategori: Dessert -->
+                <div id="dessert" class="menu-category-section" style="margin-top: 3rem;">
+                    <div class="category-header">
+                        <h2 class="category-title">Dessert</h2>
+                        <span class="menu-count">2 Menu</span>
+                    </div>
+                    <div class="menu-grid-items">
+                        <!-- Konten di-render JS -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Kolom 3: Keranjang Sidebar -->
+            <aside id="cart-sidebar" class="cart-sidebar">
+                <div class="cart-panel">
+                    <div class="cart-header">
+                        <h3>Keranjang Saya</h3>
+                        <button class="clear-cart-btn"><i class="ph ph-trash"></i> Hapus Semua</button>
+                    </div>
+                    
+                    <div class="cart-items-list">
+                        <!-- Dummy Data -->
+                    </div>
+                    
+                    <div class="cart-summary">
+                        <div class="subtotal-row">
+                            <span>Subtotal</span>
+                            <span class="subtotal-price">Rp 46.000</span>
+                        </div>
+                        <a href="checkout.html" class="btn btn-dark w-100 checkout-btn">
+                            Lanjut ke Checkout <i class="ph ph-arrow-right"></i>
+                        </a>
+                        <div class="info-alert">
+                            <i class="ph ph-truck"></i>
+                            <p>Pesanan akan disiapkan sesuai meja dan waktu kedatanganmu.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qr-info-card">
+                    <i class="ph ph-qr-code"></i>
+                    <div>
+                        <p>Nomor meja akan otomatis terdeteksi dari QR code di meja.</p>
+                        <a href="index.html#caraPesan" class="link-arrow">Lihat cara pemesanan <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </div>
+            </aside>
+            
+        </section>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <script src="../js/dummy.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

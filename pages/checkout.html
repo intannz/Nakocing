@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | NakoCing</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <main class="checkout-main" style="padding: 3rem 5%; background-color: var(--gray-bg); min-height: 80vh;">
+        
+        <div class="breadcrumb" style="margin-bottom: 2rem;">
+           <a href="menu.html"><i class="ph ph-arrow-left"></i> Kembali ke Menu</a>
+        </div>
+
+        <div class="checkout-layout" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; align-items: start;">
+            
+            <!-- Kiri: Form & Pembayaran -->
+            <div class="checkout-form-section">
+                
+                <div class="checkout-card" style="background: var(--white); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--gray-border); margin-bottom: 1.5rem;">
+                    <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;"><i class="ph ph-armchair"></i> Informasi Meja</h3>
+                    <p style="color: var(--gray-text); font-size: 0.9rem; margin-bottom: 1rem;">Meja kamu telah terdeteksi secara otomatis melalui QR Code.</p>
+                    <div style="background: var(--gray-bg); padding: 1rem; border-radius: 8px; border: 1px dashed var(--gray-border); font-size: 1.2rem; font-weight: 700; text-align: center; color: var(--black);">
+                        Meja A03
+                    </div>
+                </div>
+
+                <div class="checkout-card" style="background: var(--white); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--gray-border);">
+                    <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;"><i class="ph ph-credit-card"></i> Metode Pembayaran</h3>
+                    
+                    <div class="payment-methods" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <label class="payment-option" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid var(--black); border-radius: 8px; cursor: pointer; background: var(--gray-bg);">
+                            <input type="radio" name="payment" value="qris" checked>
+                            <i class="ph ph-qr-code" style="font-size: 1.5rem;"></i>
+                            <div style="flex-grow: 1;">
+                                <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">QRIS</h4>
+                                <p style="font-size: 0.8rem; color: var(--gray-text);">Gopay, OVO, Dana, ShopeePay, M-Banking</p>
+                            </div>
+                        </label>
+
+                        <label class="payment-option" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid var(--gray-border); border-radius: 8px; cursor: pointer;">
+                            <input type="radio" name="payment" value="cash">
+                            <i class="ph ph-money" style="font-size: 1.5rem;"></i>
+                            <div style="flex-grow: 1;">
+                                <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">Tunai ke Kasir</h4>
+                                <p style="font-size: 0.8rem; color: var(--gray-text);">Bayar langsung di meja kasir</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Kanan: Ringkasan Pesanan (Di-render via JS) -->
+            <aside class="checkout-summary-section">
+                <div class="cart-panel" style="background: var(--white); border-radius: 12px; border: 1px solid var(--gray-border); padding: 1.5rem; position: sticky; top: 100px;">
+                    <h3 style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--gray-border);">Ringkasan Pesanan</h3>
+                    
+                    <!-- Kontainer dinamis dari JavaScript -->
+                    <div id="checkout-items-container" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; max-height: 40vh; overflow-y: auto; padding-right: 5px;">
+                        <!-- Item checkout dirender di sini -->
+                    </div>
+                    
+                    <div class="cart-summary" style="border-top: 1px dashed var(--gray-border); padding-top: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; color: var(--gray-text); font-size: 0.9rem;">
+                            <span>Subtotal</span>
+                            <span id="checkout-subtotal">Rp 0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; color: var(--gray-text); font-size: 0.9rem;">
+                            <span>Pajak (10%)</span>
+                            <span id="checkout-tax">Rp 0</span>
+                        </div>
+                        <div class="subtotal-row" style="display: flex; justify-content: space-between; align-items: center; font-weight: 700; margin-bottom: 1.5rem;">
+                            <span>Total Pembayaran</span>
+                            <span class="subtotal-price" id="checkout-total" style="font-size: 1.4rem; color: var(--black);">Rp 0</span>
+                        </div>
+                        
+                        <!-- Tombol Bayar -->
+                        <button id="btn-pay" class="btn btn-dark" style="width: 100%; justify-content: center; border-radius: 8px;">
+                            Bayar Sekarang <i class="ph ph-check-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+            
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="../js/dummy.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
