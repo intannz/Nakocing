@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    loadComponent("navbar-container", "../components/navbar.html", initNavbar);
-    loadComponent("footer-container", "../components/footer.html");
+    loadComponent("navbar-container", "/components/navbar.html", initNavbar);
+    loadComponent("footer-container", "/components/footer.html");
     injectFavicon();
 });
 
@@ -655,16 +655,12 @@ function initOrderFilters() {
 }
 
 // Fungsi untuk menyuntikkan Favicon ke semua halaman secara otomatis
-function injectFavicon() {
-    // Cek apakah halaman saat ini adalah index (beranda) atau di dalam folder pages
-    const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
-    // Sesuaikan path (jalur) file berdasarkan lokasi file HTML
-    const faviconPath = isIndex ? '../assets/images/logo-favicon.svg' : '../assets/images/logo-favicon.svg';
 
+function injectFavicon() {
     const link = document.createElement('link');
     link.rel = 'icon';
     link.type = 'image/svg+xml';
-    link.href = faviconPath;
+    link.href = '/assets/images/logo-favicon.svg'; // Pakai awalan '/'
     
     document.head.appendChild(link);
 }

@@ -26,6 +26,8 @@ Aplikasi ini mengusung antarmuka minimalis dan elegan dengan nuansa warna monokr
 
 ```text
 Nakocing/
+├── index.html               # Halaman Beranda
+├── readme.md                # Dokumentasi
 ├── assets/                  # Aset gambar, favicon, dan ikon
 ├── components/              # Komponen HTML dinamis, seperti navbar dan footer
 ├── css/
@@ -34,7 +36,6 @@ Nakocing/
 │   ├── dummy.js             # Data sampel menu dan pesanan
 │   └── main.js              # Logika interaksi UI dan sistem keranjang
 └── pages/
-    ├── index.html           # Halaman Beranda
     ├── menu.html            # Katalog Menu dan Sidebar Keranjang
     ├── detail-menu.html     # Detail Menu dan Catatan Khusus
     ├── checkout.html        # Konfirmasi Pesanan dan Pembayaran
