@@ -1,6 +1,6 @@
 <nav class="navbar">
     <a href="/index.html" class="nav-brand">
-        <img src="../assets/images/logo-navbar.svg" alt="NakoCing Logo" class="nav-logo">
+        <img src="/assets/images/logo-navbar.svg" alt="NakoCing Logo" class="nav-logo">
     </a>
     
     <ul class="nav-links">
@@ -9,10 +9,14 @@
         <li><a href="/pages/pesanan-saya.html">Pesanan Saya</a></li>
     </ul>
 
-    <div class="nav-icons">
+    <!-- Ikon Keranjang & Hamburger Menu -->
+    <div class="nav-icons" style="display: flex; gap: 0.5rem;">
         <a href="/pages/menu.html#cart-sidebar" class="icon-btn cart-btn">
             <i class="ph ph-shopping-cart"></i>
             <span class="cart-badge">0</span>
         </a>
+        <button class="icon-btn mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('show-menu')">
+            <i class="ph ph-list"></i>
+        </button>
     </div>
 </nav>
