@@ -1591,10 +1591,6 @@ a {
         -webkit-overflow-scrolling: touch;
     }
 
-    .category-list::-webkit-scrollbar {
-        display: none; /* Sembunyikan garis scrollbar agar bersih */
-    }
-
     .cat-item {
         flex-shrink: 0 !important; /* Larang tombol gepeng/menyusut */
         white-space: nowrap;
@@ -1869,4 +1865,44 @@ a {
     .orders-filters {
         width: 100%;
     }
+}
+
+/* =========================================
+   CUSTOM SCROLLBAR (MENU FILTER)
+========================================= */
+/* Memastikan kontainer punya ruang untuk scrollbar di bawahnya */
+.category-list,
+.orders-filters {
+    overflow-x: auto !important;
+    padding-bottom: 14px !important; 
+    -webkit-overflow-scrolling: touch; /* Bikin scroll pakai jari terasa lebih mulus */
+}
+
+/* 1. Menentukan ketebalan scrollbar horizontal */
+.category-list::-webkit-scrollbar,
+.orders-filters::-webkit-scrollbar {
+    height: 8px !important; 
+    display: block !important; /* Memaksa scrollbar muncul kembali */
+}
+
+/* 2. Warna Jalur (Track/Rel) Scrollbar */
+.category-list::-webkit-scrollbar-track,
+.orders-filters::-webkit-scrollbar-track {
+    background: var(--gray-bg); 
+    border-radius: 10px;
+    border: 1px solid var(--gray-border); 
+}
+
+/* 3. Warna Pegangan (Thumb) Scrollbar - Mirip referensi gambar ke-3 */
+.category-list::-webkit-scrollbar-thumb,
+.orders-filters::-webkit-scrollbar-thumb {
+    background: #b0b5b9; /* Warna silver/abu-abu klasik */
+    border-radius: 10px;
+    border: 1px solid #9ca3af; /* Sedikit garis pinggir agar tegas */
+}
+
+/* 4. Warna Pegangan saat disentuh / digeser */
+.category-list::-webkit-scrollbar-thumb:hover,
+.orders-filters::-webkit-scrollbar-thumb:active {
+    background: #8b9298; 
 }
