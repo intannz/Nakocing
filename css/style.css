@@ -1581,14 +1581,22 @@ a {
     }
 
     .category-list {
-        flex-direction: row; /* Berjejer ke samping */
-        overflow-x: auto; /* Bisa digeser / scroll ke samping */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap !important; /* Paksa memanjang ke kanan */
+        overflow-x: auto;
         gap: 1rem;
         margin-bottom: 1rem;
-        padding-bottom: 0.5rem; /* Ruang untuk scrollbar */
+        padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category-list::-webkit-scrollbar {
+        display: none; /* Sembunyikan garis scrollbar agar bersih */
     }
 
     .cat-item {
+        flex-shrink: 0 !important; /* Larang tombol gepeng/menyusut */
         white-space: nowrap;
         padding: 0.6rem 1.2rem;
         border-radius: 50px;
@@ -1643,9 +1651,17 @@ a {
         display: flex;
     }
 
-    /* 1 & 3. Hero Beranda (index.html) Diperkecil */
-    .hero {
-        min-height: 50vh !important; /* Tinggi banner dikurangi */
+    /* 1. Hero Banner: Perkecil tinggi dan ukuran Font */
+    .hero, .menu-hero {
+        min-height: auto !important;
+        padding: 2.5rem 5% !important; /* KUNCI UTAMA: Kurangi padding atas bawah */
+    }
+
+    .hero h1, .menu-hero-content h1 {
+        font-size: 1.8rem !important; /* Font jauh lebih kecil */
+        line-height: 1.3 !important;
+        word-wrap: break-word; /* KUNCI UTAMA: Biar teks nggak terpotong */
+        text-align: center;
     }
 
     .hero-container {
@@ -1659,11 +1675,6 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .hero h1 {
-        font-size: 1.6rem !important; /* Huruf H1 jauh lebih kecil di HP */
-        text-align: center;
     }
     
     .description {
@@ -1778,23 +1789,22 @@ a {
         position: static;
     }
 
-    /* 1. KARTU PESANAN SAYA (Perbaikan Margin Bablas) */
     .order-card {
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        padding: 1rem;
-        box-sizing: border-box; /* Kunci supaya tidak menembus batas layar */
+        max-width: 100vw;
+        box-sizing: border-box; /* Mengunci margin agar tidak meluber */
         overflow: hidden;
     }
 
     .order-img-main {
         width: 100%;
-        height: 130px; /* Gambar pesanan jauh lebih pendek di HP */
+        height: 150px;
     }
 
     .order-items-mini {
-        flex-wrap: wrap; /* Cegah rentengan pesanan bablas memanjang ke kanan */
+        flex-wrap: wrap; /* Biar ikon menu kecil nggak berbaris terus ke kanan */
         gap: 0.8rem;
         width: 100%;
     }

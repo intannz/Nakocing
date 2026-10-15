@@ -96,11 +96,13 @@ function renderFeaturedMenu() {
 // Fungsi untuk me-render daftar pesanan di pesanan-saya.html
 function renderOrders() {
     const container = document.getElementById('orders-container');
-    if (!container || typeof ordersData === 'undefined') return;
+    if (!container) return;
 
-    container.innerHTML = ''; // Kosongkan
+    // AMBIL DATA DARI STORAGE, BUKAN VARIABEL SEMENTARA
+    const currentOrders = getOrders(); 
+    container.innerHTML = ''; 
 
-    ordersData.forEach(order => {
+    currentOrders.forEach(order => {
         let miniItemsHtml = '';
         order.items.forEach(item => {
             miniItemsHtml += `
@@ -306,6 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProductDetail();
     initOrderFilters();
     initHeroSlider();
+    getOrders()
 });
 
 // ==========================================
@@ -544,13 +547,10 @@ function attachCheckoutEvent() {
                     extra: formattedItems.length > 2 ? formattedItems.length - 2 : 0
                 };
                 
-                // 5. Masukkan ke urutan paling atas di ordersData
-                if (typeof ordersData !== 'undefined') {
-                    ordersData.unshift(newOrder); 
-                }
-
-                alert("Pembayaran Berhasil! Pesanan sedang diproses.");
-                saveCart([]); // Kosongkan keranjang
+                // 5. Masukkan ke urutan paling atas di Local Storage
+                let currentOrders = getOrders();
+                currentOrders.unshift(newOrder); 
+                localStorage.setItem('nakocing_orders', JSON.stringify(currentOrders));
                 
                 // 6. Redirect ke halaman Pesanan Saya
                 window.location.href = "pesanan-saya.html";
@@ -729,4 +729,19 @@ function initHeroSlider() {
     // Inisialisasi slide pertama
     changeSlide(0);
     startAutoSlide();
+}
+
+// Fungsi untuk mengambil Riwayat Pesanan dari Local Storage
+function getOrders() {
+    const localOrders = localStorage.getItem('nakocing_orders');
+    if (localOrders) {
+        return JSON.parse(localOrders);
+    } else {
+        // Jika baru pertama kali buka, ambil data bawaan dari dummy.js
+        if (typeof ordersData !== 'undefined') {
+            localStorage.setItem('nakocing_orders', JSON.stringify(ordersData));
+            return ordersData;
+        }
+        return [];
+    }
 }
